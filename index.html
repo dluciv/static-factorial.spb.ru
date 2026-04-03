@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>АНО «ФАКТОРИАЛ» — культурно-научные и образовательные проекты</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <meta name="description" content="АНО «ФАКТОРИАЛ» — культурно-научные, образовательные и цифровые проекты на стыке просвещения, науки, IT и игровых форматов." />
+  <style>
+    :root {
+      --bg: #f3f1ed;
+      --paper: #fbfaf7;
+      --paper-2: #f7f5f1;
+      --ink: #162334;
+      --ink-soft: #314154;
+      --muted: #667587;
+      --line: rgba(22, 35, 52, 0.10);
+      --line-strong: rgba(22, 35, 52, 0.18);
+      --accent: #304b69;
+      --accent-soft: #dfe6ee;
+      --deep: #111b29;
+      --deep-soft: #1a2738;
+      --white: #ffffff;
+      --shadow-soft: 0 10px 30px rgba(17, 27, 41, 0.04);
+      --shadow-card: 0 18px 50px rgba(17, 27, 41, 0.06);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --container: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: #dde4eb;
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(243, 241, 237, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header__row {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand__mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      background: var(--paper);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    .brand__text {
+      min-width: 0;
+    }
+
+    .brand__title {
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .brand__subtitle {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 14px;
+      color: var(--ink-soft);
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+    }
+
+    .nav a:not(.button)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: width 0.22s ease;
+    }
+
+    .nav a:not(.button):hover::after {
+      width: 100%;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      background: transparent;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 550;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button--dark {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+
+    .button--dark:hover {
+      background: #1d2c40;
+      border-color: #1d2c40;
+    }
+
+    .button--light:hover {
+      background: rgba(22, 35, 52, 0.03);
+      border-color: rgba(22, 35, 52, 0.25);
+    }
+
+    .hero {
+      padding: 76px 0 110px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.8fr);
+      gap: 72px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      max-width: 10.5ch;
+    }
+
+    .hero__lead {
+      margin: 28px 0 0;
+      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .hero__panel {
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero__panel-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero__panel-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero__panel-item {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero__panel-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .hero__panel-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .hero__panel-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    section.section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .section-head__left {
+      max-width: 780px;
+    }
+
+    .section-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .section-text {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    .section-link {
+      color: var(--ink-soft);
+      font-size: 14px;
+      white-space: nowrap;
+      align-self: center;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line-strong);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .section-link:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .expertise {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .expertise-card {
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(22, 35, 52, 0.18);
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .expertise-card__index {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .expertise-card__index::after {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 1px;
+      background: var(--line-strong);
+      margin-top: 12px;
+    }
+
+    .expertise-card h3 {
+      margin: 0 0 16px;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+    }
+
+    .expertise-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .projects {
+      background: var(--deep);
+      color: var(--white);
+    }
+
+    .projects .section-kicker,
+    .projects .section-text,
+    .projects .section-link {
+      color: rgba(235, 241, 248, 0.68);
+    }
+
+    .projects .section-title {
+      color: var(--white);
+    }
+
+    .projects .section-link {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .projects .section-link:hover {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .projects-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .project-feature,
+    .project-stack article {
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 26px;
+    }
+
+    .project-feature {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .project-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .project-stack article {
+      padding: 26px;
+    }
+
+    .project-media {
+      border-radius: 18px;
+      aspect-ratio: 16 / 10;
+      background:
+        linear-gradient(0deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04)),
+        #253247;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.42);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .project-meta {
+      color: rgba(235, 241, 248, 0.62);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+      color: var(--white);
+    }
+
+    .project-text {
+      margin: 0;
+      color: rgba(235, 241, 248, 0.76);
+      font-size: 16px;
+      line-height: 1.72;
+      max-width: 62ch;
+    }
+
+    .news {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .news-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .news-date {
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .news-content h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 620;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 70ch;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .person-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .person-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22, 35, 52, 0.18);
+      box-shadow: var(--shadow-card);
+    }
+
+    .person-card__photo {
+      aspect-ratio: 4 / 5;
+      background:
+        linear-gradient(0deg, rgba(22, 35, 52, 0.04), rgba(22, 35, 52, 0.04)),
+        #e7e4de;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .person-card__body {
+      padding: 20px 20px 22px;
+    }
+
+    .person-card__role {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .person-card__name {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+    }
+
+    .person-card__text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .person-card__mail {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      border-bottom: 1px solid var(--line-strong);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .person-card__mail:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .footer {
+      background: var(--deep);
+      color: rgba(235, 241, 248, 0.82);
+      padding: 72px 0 56px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand__mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .footer-brand__title {
+      margin: 0;
+      font-size: 18px;
+      color: var(--white);
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-brand__subtitle {
+      margin: 2px 0 0;
+      color: rgba(235, 241, 248, 0.50);
+      font-size: 12px;
+    }
+
+    .footer-text {
+      margin: 0;
+      max-width: 420px;
+      color: rgba(235, 241, 248, 0.62);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .footer-block h4 {
+      margin: 0 0 18px;
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .footer-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(235, 241, 248, 0.66);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .footer-list a {
+      color: rgba(235, 241, 248, 0.82);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-list a:hover {
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-bottom {
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      color: rgba(235, 241, 248, 0.44);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1150px) {
+      .hero__grid,
+      .projects-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-header__row {
+        min-height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        gap: 18px;
+      }
+
+      .expertise-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .news-date {
+        white-space: normal;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+      }
+
+      .hero {
+        padding: 54px 0 78px;
+      }
+
+      section.section {
+        padding: 78px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 11vw, 64px);
+      }
+
+      .hero__lead,
+      .section-text,
+      .project-text,
+      .news-content p {
+        font-size: 16px;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .brand__subtitle {
+        display: none;
+      }
+
+      .project-title {
+        font-size: 24px;
+      }
+
+      .person-card__name {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__row">
+      <a href="#top" class="brand" aria-label="АНО ФАКТОРИАЛ">
+        <div class="brand__mark"><img src="img/logo-light.png" /></div>
+        <div class="brand__text">
+          <p class="brand__title">АНО «ФАКТОРИАЛ»</p>
+          <p class="brand__subtitle">Культурно-научные и образовательные проекты</p>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about">Подход</a>
+        <a href="#projects">Проекты</a>
+        <a href="#news">События</a>
+        <a href="#team">Команда</a>
+        <a href="#contacts" class="button button--light">Связаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <div class="eyebrow">Автономная некоммерческая организация</div>
+          <h1>Создаем среды, в которых знание становится участием</h1>
+          <p class="hero__lead">
+            АНО «Факториал» — организация, работающая в сферах культуры, науки, просвещения и
+            информационных технологий. Мы разрабатываем и сопровождаем проекты, в которых
+            соединяются образовательные программы, игровые форматы, публичные события и
+            цифровые инструменты.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projects" class="button button--dark">Смотреть проекты</a>
+            <a href="#contacts" class="button button--light">Связаться</a>
+          </div>
+        </div>
+
+        <aside class="hero__panel" aria-label="Ключевые направления">
+          <div class="hero__panel-label">Ключевые направления</div>
+          <ul class="hero__panel-list">
+            <li class="hero__panel-item">
+              <p class="hero__panel-title">Просветительские и культурные программы</p>
+              <p class="hero__panel-text">
+                Организуем события, встречи и общественно значимые форматы, посвященные культуре, знанию,
+                профессиональному росту и содержательному досугу.
+              </p>
+            </li>
+            <li class="hero__panel-item">
+              <p class="hero__panel-title">Игровые и интерактивные практики</p>
+              <p class="hero__panel-text">
+                Используем настольные, турнирные и иные игровые форматы как тактичный инструмент
+                вовлечения в образование, историю, традицию и коллективное обсуждение.
+              </p>
+            </li>
+            <li class="hero__panel-item">
+              <p class="hero__panel-title">IT и информационные среды</p>
+              <p class="hero__panel-text">
+                Развиваем цифровые решения, информационные ресурсы и инструменты сопровождения
+                проектов в области культуры, просвещения и общественных инициатив.
+              </p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section expertise">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__left">
+            <div class="section-kicker">Подход</div>
+            <h2 class="section-title">Работаем на пересечении просвещения, культурной практики и современной проектной формы</h2>
+            <p class="section-text">
+              Для нас важны не только отдельные мероприятия, но и качество среды: каким образом человек
+              включается в процесс, как устроено содержание, насколько точно подобраны форма, язык и
+              инструменты взаимодействия.
+            </p>
+          </div>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="expertise-card">
+            <div>
+              <div class="expertise-card__index">01</div>
+              <h3>Просветительские программы</h3>
+              <p>
+                Организуем лекции, семинары, круглые столы, встречи, выставочные и публичные форматы,
+                связанные с культурой, наукой, образованием и общественно значимыми инициативами.
+              </p>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <div>
+              <div class="expertise-card__index">02</div>
+              <h3>Игровые форматы</h3>
+              <p>
+                Работаем с настольными играми, турнирами и интерактивными сценариями, в которых
+                сложные темы раскрываются через участие, диалог, наблюдение и совместное действие.
+              </p>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <div>
+              <div class="expertise-card__index">03</div>
+              <h3>Цифровые и методические решения</h3>
+              <p>
+                Разрабатываем информационные ресурсы, программные и организационно-методические
+                инструменты для сопровождения просветительских, культурных и исследовательских проектов.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__left">
+            <div class="section-kicker">Проекты и практики</div>
+            <h2 class="section-title">Несколько форматов, через которые уже видна логика нашей работы</h2>
+            <p class="section-text">
+              На сайте представлены не все направления деятельности организации, а лишь несколько
+              показательных примеров: публичные события, просветительские игровые форматы,
+              методическая и цифровая работа.
+            </p>
+          </div>
+          <a href="#contacts" class="section-link">Связаться по поводу сотрудничества</a>
+        </div>
+
+        <div class="projects-layout">
+          <article class="project-feature">
+            <div class="project-media">
+              <img src="img/5.jpg" />
+            </div>
+            <div>
+              <div class="project-meta">Совместный проект · Санкт-Петербург</div>
+              <h3 class="project-title">Турнир по игре «Ось времени. Богослужебный год»</h3>
+              <p class="project-text">
+                Совместно с Феодоровским собором был проведен дружеский турнир, посвященный знакомству
+                подростков и молодежи с церковным календарем, праздниками и богослужебной традицией
+                через содержательную игровую форму. Для нас это важный пример того, как просвещение
+                может быть одновременно точным, уважительным и вовлекающим.
+              </p>
+            </div>
+          </article>
+
+          <div class="project-stack">
+            <article>
+              <div class="project-meta">Публичные площадки</div>
+              <h3 class="project-title" style="font-size: 24px;">Игровые форматы на семейных и городских событиях</h3>
+              <p class="project-text">
+                Организация участвует в форумах, встречах и общественных площадках, где игровые
+                механики помогают говорить с детьми, подростками и семьями о культуре, истории,
+                традиции, памяти и ценностях совместного участия.
+              </p>
+            </article>
+
+            <article>
+              <div class="project-meta">Методическая работа</div>
+              <h3 class="project-title" style="font-size: 24px;">Семинары, выездные встречи и сопровождение</h3>
+              <p class="project-text">
+                Отдельное направление работы — семинары и консультации для педагогов, организаторов и
+                партнерских площадок, а также сопровождение программ, в которых игровые и
+                просветительские форматы используются в долгую и осмысленно.
+              </p>
+            </article>
+
+            <article>
+              <div class="project-meta">Цифровая среда</div>
+              <h3 class="project-title" style="font-size: 24px;">Информационные ресурсы и IT-направление</h3>
+              <p class="project-text">
+                В зоне развития — цифровые платформы, информационные среды и технологическое
+                сопровождение проектов, связанных с культурой, образованием, общественными
+                инициативами и современным распространением знания.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section news">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__left">
+            <div class="section-kicker">События</div>
+            <h2 class="section-title">Краткая рабочая хроника</h2>
+            <p class="section-text">
+              Здесь собраны некоторые события и форматы, через которые постепенно формируется
+              практический профиль организации.
+            </p>
+          </div>
+          <a href="#contacts" class="section-link">Написать нам</a>
+        </div>
+
+        <div class="news-list">
+          <article class="news-item">
+            <div class="news-date">2026</div>
+            <div class="news-content">
+              <h3>АНО «Факториал» начала работу как площадка культурно-научных и образовательных инициатив</h3>
+              <p>
+                Организация объединяет просветительские, культурные, игровые и цифровые направления,
+                формируя среду для работы с общественно значимыми проектами, знаниями, профессиональным
+                ростом и современными форматами участия.
+              </p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-content">
+              <h3>Совместно с Феодоровским собором проведен дружеский турнир по настольной игре</h3>
+              <p>
+                В Санкт-Петербурге состоялась встреча молодежных команд, посвященная игре
+                «Ось времени. Богослужебный год». Турнир был организован как просветительское
+                и объединяющее событие, в котором содержательная игровая форма стала основой
+                живого разговора о церковной традиции, праздниках и календаре.
+              </p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-content">
+              <h3>Игровые просветительские форматы представлены на семейных и общественных площадках</h3>
+              <p>
+                В ряде форумов и открытых событий были представлены настольные и тематические игровые
+                форматы, посвященные культурной памяти, праздникам, историческим сюжетам и развитию
+                содержательного семейного досуга.
+              </p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-content">
+              <h3>Продолжаются семинары, выездные встречи и методическая работа</h3>
+              <p>
+                Наряду с самими игровыми программами ведется работа по обсуждению и адаптации
+                просветительских решений для педагогов, организаторов и партнерских площадок,
+                заинтересованных в устойчивом использовании таких форматов.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__left">
+            <div class="section-kicker">Команда</div>
+            <h2 class="section-title">Руководство и учредители</h2>
+            <p class="section-text">
+              Команда организации объединяет управленческую, методическую, научную и технологическую
+              компетенции, необходимые для развития культурно-научных и образовательных проектов.
+            </p>
+          </div>
+        </div>
+
+        <div class="team-grid">
+          <article class="person-card">
+            <div class="person-card__photo"><img src="img/3.jpg" /></div>
+            <div class="person-card__body">
+              <div class="person-card__role">Генеральный директор</div>
+              <h3 class="person-card__name">Русляков Геннадий Павлович</h3>
+              <p class="person-card__text">
+                Осуществляет текущее руководство организацией, координирует проектную работу,
+                внешние связи и развитие партнерских направлений.
+              </p>
+              <a class="person-card__mail" href="mailto:basspace@mail.ru">basspace@mail.ru</a>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-card__photo"><img src="img/4.jpg" /></div>
+            <div class="person-card__body">
+              <div class="person-card__role">Учредитель · IT-направление</div>
+              <h3 class="person-card__name">Луцив Дмитрий Вадимович</h3>
+              <p class="person-card__text">
+                Ответственный секретарь, кандидат физико-математических наук, доцент.
+                Курирует технологическое развитие, цифровые решения и IT-сопровождение проектов.
+              </p>
+              <a class="person-card__mail" href="mailto:dluciv@dluciv.name">dluciv@dluciv.name</a>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-card__photo"><img src="img/1.jpg" /></div>
+            <div class="person-card__body">
+              <div class="person-card__role">Учредитель · Методическое направление</div>
+              <h3 class="person-card__name">Смольников Владимир Юрьевич</h3>
+              <p class="person-card__text">
+                Кандидат педагогических наук. Отвечает за методическую рамку программ,
+                образовательную логику проектов и содержательное сопровождение инициатив.
+              </p>
+              <a class="person-card__mail" href="mailto:vysm@mail.ru">vysm@mail.ru</a>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-card__photo"><img src="img/2.jpg" /></div>
+            <div class="person-card__body">
+              <div class="person-card__role">Учредитель · Взаимодействие и партнерства</div>
+              <h3 class="person-card__name">Якубенко Людмила Михайловна</h3>
+              <p class="person-card__text">
+                Физик. Сопровождает взаимодействие с государственными структурами, партнерами
+                и спонсорами, а также внешние организационные коммуникации.
+              </p>
+              <a class="person-card__mail" href="mailto:lm25.10@yandex.ru">lm25.10@yandex.ru</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand__mark">Ф</div>
+            <div>
+              <p class="footer-brand__title">АНО «ФАКТОРИАЛ»</p>
+              <p class="footer-brand__subtitle">Культурно-научные и образовательные проекты</p>
+            </div>
+          </div>
+          <p class="footer-text">
+            Автономная некоммерческая организация «Культурно-научные, образовательные среды и
+            мероприятия “Факториал”». Работаем в Санкт-Петербурге и развиваем проекты на стыке
+            культуры, науки, просвещения, игровых форматов и цифровых инструментов.
+          </p>
+        </div>
+
+        <div class="footer-block">
+          <h4>Контакты</h4>
+          <ul class="footer-list">
+            <li>Санкт-Петербург, Российская Федерация</li>
+            <li><a href="mailto:contact@factorial.spb.ru">contact@factorial.spb.ru</a></li>
+            <li>Контакты учредителей указаны в разделе «Команда»</li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h4>Официальная информация</h4>
+          <ul class="footer-list">
+            <li>Автономная некоммерческая организация</li>
+            <li>Организация зарегистрирована в Российской Федерации</li>
+            <li>Полные реквизиты и регистрационные сведения предоставляются по запросу</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 АНО «ФАКТОРИАЛ». Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

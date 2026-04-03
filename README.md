@@ -1,1 +1,1 @@
-```index.html?page=s```
+```wiki.html?page=s```
