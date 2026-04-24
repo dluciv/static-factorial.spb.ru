@@ -8,28 +8,34 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
   <meta name="description" content="АНО «ФАКТОРИАЛ» — культурно-научные, образовательные и цифровые проекты на стыке просвещения, науки, IT и игровых форматов." />
   <style>
+    /* =========================================================
+       1. ПАЛИТРА И БАЗОВЫЕ ПЕРЕМЕННЫЕ
+    ========================================================= */
     :root {
-      --bg: #f3f1ed;
-      --paper: #fbfaf7;
-      --paper-2: #f7f5f1;
-      --ink: #162334;
-      --ink-soft: #314154;
-      --muted: #667587;
-      --line: rgba(22, 35, 52, 0.10);
-      --line-strong: rgba(22, 35, 52, 0.18);
-      --accent: #304b69;
-      --accent-soft: #dfe6ee;
-      --deep: #111b29;
-      --deep-soft: #1a2738;
+      --bg: #f3efe8;
+      --paper: #fbf8f3;
+      --paper-2: #f7f3ed;
+      --ink: #1b2735;
+      --ink-soft: #415061;
+      --muted: #7a8794;
+      --line: rgba(27, 39, 53, 0.10);
+      --line-strong: rgba(27, 39, 53, 0.18);
+      --accent: #6c7f73;
+      --accent-soft: #e4e7de;
+      --deep: #16212d;
+      --deep-soft: #1f2d3b;
       --white: #ffffff;
-      --shadow-soft: 0 10px 30px rgba(17, 27, 41, 0.04);
-      --shadow-card: 0 18px 50px rgba(17, 27, 41, 0.06);
+      --shadow-soft: 0 10px 30px rgba(22, 33, 45, 0.04);
+      --shadow-card: 0 18px 50px rgba(22, 33, 45, 0.06);
       --radius-lg: 28px;
       --radius-md: 20px;
       --radius-sm: 14px;
       --container: 1240px;
     }
 
+    /* =========================================================
+       2. БАЗОВЫЙ СБРОС
+    ========================================================= */
     * {
       box-sizing: border-box;
     }
@@ -52,7 +58,7 @@
     }
 
     ::selection {
-      background: #dde4eb;
+      background: #e7dfd2;
       color: var(--ink);
     }
 
@@ -71,11 +77,14 @@
       margin: 0 auto;
     }
 
+    /* =========================================================
+       3. ШАПКА
+    ========================================================= */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(243, 241, 237, 0.82);
+      background: rgba(243, 239, 232, 0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
@@ -191,15 +200,18 @@
     }
 
     .button--dark:hover {
-      background: #1d2c40;
-      border-color: #1d2c40;
+      background: #223244;
+      border-color: #223244;
     }
 
     .button--light:hover {
-      background: rgba(22, 35, 52, 0.03);
-      border-color: rgba(22, 35, 52, 0.25);
+      background: rgba(27, 39, 53, 0.03);
+      border-color: rgba(27, 39, 53, 0.25);
     }
 
+    /* =========================================================
+       4. ПЕРВЫЙ ЭКРАН
+    ========================================================= */
     .hero {
       padding: 76px 0 110px;
       border-bottom: 1px solid var(--line);
@@ -256,7 +268,7 @@
     }
 
     .hero__panel {
-      background: rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.46);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       padding: 28px;
@@ -303,6 +315,9 @@
       line-height: 1.65;
     }
 
+    /* =========================================================
+       5. ОБЩИЕ СЕКЦИИ
+    ========================================================= */
     section.section {
       padding: 110px 0;
     }
@@ -316,7 +331,7 @@
     }
 
     .section-head__left {
-      max-width: 780px;
+      max-width: 840px;
     }
 
     .section-kicker {
@@ -358,6 +373,9 @@
       border-color: var(--ink);
     }
 
+    /* =========================================================
+       6. ПОДХОД
+    ========================================================= */
     .expertise {
       background: var(--paper);
       border-top: 1px solid var(--line);
@@ -384,8 +402,8 @@
 
     .expertise-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(22, 35, 52, 0.18);
-      background: rgba(255, 255, 255, 0.35);
+      border-color: rgba(27, 39, 53, 0.18);
+      background: rgba(255, 255, 255, 0.30);
     }
 
     .expertise-card__index {
@@ -420,6 +438,12 @@
       line-height: 1.75;
     }
 
+    /* =========================================================
+       7. ПРОЕКТЫ
+    ========================================================= */
+    /* =========================================================
+       7. ПРОЕКТЫ
+    ========================================================= */
     .projects {
       background: var(--deep);
       color: var(--white);
@@ -479,7 +503,7 @@
       aspect-ratio: 16 / 10;
       background:
         linear-gradient(0deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04)),
-        #253247;
+        #273444;
       border: 1px solid rgba(255,255,255,0.08);
       display: grid;
       place-items: center;
@@ -488,7 +512,8 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-align: center;
-      padding: 18px;
+      padding: 0px;
+      overflow: hidden;
     }
 
     .project-meta {
@@ -516,6 +541,12 @@
       max-width: 62ch;
     }
 
+    /* =========================================================
+       8. НОВОСТИ И СОБЫТИЯ
+       Здесь теперь два типа блоков:
+       1) большая карточка с галереей
+       2) текстовая новость без фото
+    ========================================================= */
     .news {
       background: var(--paper);
       border-top: 1px solid var(--line);
@@ -523,40 +554,249 @@
     }
 
     .news-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    /* --- Карточка события с фото / галереей --- */
+    .news-card {
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .news-card__inner {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .news-card__media {
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.24), rgba(255,255,255,0.08));
+    }
+
+    .news-card__body {
+      padding: 30px 30px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* --- Текстовая новость без фотографии --- */
+    .news-note {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 28px;
+      padding: 30px 0;
       border-top: 1px solid var(--line);
     }
 
-    .news-item {
-      display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 28px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
+    .news-note:first-of-type {
+      border-top: 1px solid var(--line);
+    }
+
+    .news-note__year {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.4;
+      padding-top: 6px;
+    }
+
+    .news-note__content h3 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      font-weight: 640;
+      color: var(--ink);
+      max-width: 42ch;
+    }
+
+    .news-note__content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 70ch;
     }
 
     .news-date {
       color: var(--muted);
-      font-size: 14px;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
     .news-content h3 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      line-height: 1.15;
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.12;
       letter-spacing: -0.03em;
-      font-weight: 620;
+      font-weight: 640;
+      color: var(--ink);
     }
 
     .news-content p {
       margin: 0;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.75;
+      line-height: 1.78;
       max-width: 70ch;
     }
 
+    .news-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 22px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .news-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.65);
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       9. ГАЛЕРЕЯ
+    ========================================================= */
+    .gallery {
+      position: relative;
+    }
+
+    .gallery__viewport {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #e8e0d4;
+      touch-action: pan-y;
+    }
+
+    .gallery__track {
+      display: flex;
+      transition: transform 0.35s ease;
+      will-change: transform;
+    }
+
+    .gallery__slide {
+      min-width: 100%;
+      aspect-ratio: 4 / 3;
+      position: relative;
+      background: #ddd4c8;
+      overflow: hidden;
+    }
+
+    .gallery__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery__caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 4px 0;
+    }
+
+    .gallery__caption-text {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .gallery__count {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .gallery__controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .gallery__dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .gallery__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 0;
+      padding: 0;
+      background: rgba(27, 39, 53, 0.18);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .gallery__dot:hover {
+      transform: scale(1.08);
+    }
+
+    .gallery__dot.is-active {
+      background: var(--ink);
+      transform: scale(1.2);
+    }
+
+    .gallery__arrows {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .gallery__arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.82);
+      color: var(--ink);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gallery__arrow:hover {
+      transform: translateY(-1px);
+      background: var(--white);
+      border-color: var(--line-strong);
+    }
+
+    .gallery__arrow:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+    }
+
+    /* =========================================================
+       10. КОМАНДА
+    ========================================================= */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -574,15 +814,15 @@
 
     .person-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(22, 35, 52, 0.18);
+      border-color: rgba(27, 39, 53, 0.18);
       box-shadow: var(--shadow-card);
     }
 
     .person-card__photo {
       aspect-ratio: 4 / 5;
       background:
-        linear-gradient(0deg, rgba(22, 35, 52, 0.04), rgba(22, 35, 52, 0.04)),
-        #e7e4de;
+        linear-gradient(0deg, rgba(27, 39, 53, 0.04), rgba(27, 39, 53, 0.04)),
+        #e6ddd1;
       border-bottom: 1px solid var(--line);
       display: grid;
       place-items: center;
@@ -624,8 +864,8 @@
       display: inline-block;
       margin-top: 14px;
       color: var(--ink-soft);
-      font-size: 14px;
       border-bottom: 1px solid var(--line-strong);
+      font-size: 14px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
@@ -634,6 +874,9 @@
       border-color: var(--ink);
     }
 
+    /* =========================================================
+       11. ПОДВАЛ
+    ========================================================= */
     .footer {
       background: var(--deep);
       color: rgba(235, 241, 248, 0.82);
@@ -725,6 +968,9 @@
       font-size: 13px;
     }
 
+    /* =========================================================
+       12. АДАПТИВ
+    ========================================================= */
     @media (max-width: 1150px) {
       .hero__grid,
       .projects-layout,
@@ -734,6 +980,15 @@
 
       .team-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .news-card__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .news-card__media {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
     }
 
@@ -754,17 +1009,17 @@
         grid-template-columns: 1fr;
       }
 
-      .news-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .news-date {
-        white-space: normal;
-      }
-
       .section-head {
         grid-template-columns: 1fr;
+      }
+
+      .news-note {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .news-note__year {
+        padding-top: 0;
       }
     }
 
@@ -788,7 +1043,8 @@
       .hero__lead,
       .section-text,
       .project-text,
-      .news-content p {
+      .news-content p,
+      .news-note__content p {
         font-size: 16px;
       }
 
@@ -805,18 +1061,37 @@
         display: none;
       }
 
-      .project-title {
+      .project-title,
+      .news-content h3,
+      .news-note__content h3 {
         font-size: 24px;
       }
 
       .person-card__name {
         font-size: 22px;
       }
+
+      .news-card__body,
+      .news-card__media {
+        padding: 22px;
+      }
+
+      .gallery__controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .gallery__arrows {
+        align-self: flex-end;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- =========================================================
+       ШАПКА
+  ========================================================== -->
   <header class="site-header">
     <div class="container site-header__row">
       <a href="#top" class="brand" aria-label="АНО ФАКТОРИАЛ">
@@ -839,6 +1114,9 @@
 
   <main id="top">
 
+    <!-- =========================================================
+         ПЕРВЫЙ ЭКРАН
+    ========================================================== -->
     <section class="hero">
       <div class="container hero__grid">
         <div>
@@ -886,6 +1164,9 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         БЛОК "ПОДХОД"
+    ========================================================== -->
     <section id="about" class="section expertise">
       <div class="container">
         <div class="section-head">
@@ -937,6 +1218,9 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         БЛОК "ПРОЕКТЫ"
+    ========================================================== -->
     <section id="projects" class="section projects">
       <div class="container">
         <div class="section-head">
@@ -1004,6 +1288,16 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         БЛОК "СОБЫТИЯ И НОВОСТИ"
+         Здесь можно размещать:
+         1) события с галереей
+         2) текстовые новости без фото
+
+         КУДА ДОБАВЛЯТЬ:
+         - новую карточку с фото вставлять внутрь .news-list
+         - новую текстовую новость вставлять внутрь .news-notes
+    ========================================================== -->
     <section id="news" class="section news">
       <div class="container">
         <div class="section-head">
@@ -1018,22 +1312,168 @@
           <a href="#contacts" class="section-link">Написать нам</a>
         </div>
 
+        <!-- =====================================================
+             БЛОК 1. СОБЫТИЯ С ФОТО / ГАЛЕРЕЕЙ
+             СЮДА ДОБАВЛЯЮТСЯ БОЛЬШИЕ КАРТОЧКИ С СОБЫТИЯМИ
+             Чтобы добавить новое событие с фото:
+             1) скопируй целиком article.news-card
+             2) вставь ниже
+             3) замени фотографии, дату, заголовок, текст
+        ====================================================== -->
         <div class="news-list">
-          <article class="news-item">
-            <div class="news-date">2026</div>
-            <div class="news-content">
+<article class="news-card">
+  <div class="news-card__inner">
+    <div class="news-card__media">
+      <div class="gallery" data-gallery tabindex="0">
+        <div class="gallery__viewport">
+          <div class="gallery__track">
+            <div class="gallery__slide"><img src="img/zenit-konferencia/cover.jpg" alt="Эксперты АНО «Факториал» на конференции «Смена 2.0» — обложка события"></div>
+            <div class="gallery__slide"><img src="img/zenit-konferencia/01.jpg" alt="Фотография 1 с конференции «Смена 2.0»"></div>
+            <div class="gallery__slide"><img src="img/zenit-konferencia/02.jpg" alt="Фотография 2 с конференции «Смена 2.0»"></div>
+            <div class="gallery__slide"><img src="img/zenit-konferencia/03.jpg" alt="Фотография 3 с конференции «Смена 2.0»"></div>
+            <div class="gallery__slide"><img src="img/zenit-konferencia/04.jpg" alt="Фотография 4 с конференции «Смена 2.0»"></div>
+          </div>
+        </div>
+
+        <div class="gallery__caption">
+          <div class="gallery__caption-text">
+            Фотографии с конференции «Смена 2.0». Просмотр доступен с помощью свайпа, стрелок или точек навигации.
+          </div>
+          <div class="gallery__count">1 / 5</div>
+        </div>
+
+        <div class="gallery__controls">
+          <div class="gallery__dots"></div>
+          <div class="gallery__arrows">
+            <button class="gallery__arrow gallery__prev" type="button" aria-label="Предыдущая фотография">‹</button>
+            <button class="gallery__arrow gallery__next" type="button" aria-label="Следующая фотография">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card__body">
+      <div class="news-date">3 апреля 2026 · Санкт-Петербург</div>
+      <div class="news-content">
+        <h3>Эксперты АНО «Факториал» представили авторские образовательные практики на конференции «Смена 2.0»</h3>
+        <p>
+          В «Газпром-Академии» ФК «Зенит» прошла первая практическая конференция «Смена 2.0:
+          интеграция спортивного вектора в качество образования», объединившая педагогов,
+          психологов, тренеров и экспертов со всей России. От АНО «Факториал» в конференции
+          приняли участие Владимир Юрьевич Смольников и Этери Георгиевна Хорава. В рамках
+          программы были представлены доклад «Язык футбола — для всех» и авторская педагогическая
+          технология, основанная на настольных играх «Мемо: Футбол» и «Языковое лото: Футбол на 4 языках».
+        </p>
+      </div>
+
+      <div class="news-meta">
+        <span class="news-chip">Конференция</span>
+        <span class="news-chip">Образовательные практики</span>
+        <span class="news-chip">Фотогалерея события</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+          <!-- =================================================
+               НОВОСТЬ С ГАЛЕРЕЕЙ / СОБЫТИЕ
+          ================================================== -->
+          <article class="news-card">
+            <div class="news-card__inner">
+              <div class="news-card__media">
+                <div class="gallery" data-gallery tabindex="0">
+                  <div class="gallery__viewport">
+                    <div class="gallery__track">
+                      <div class="gallery__slide"><img src="img/nevsky177/cover.jpg" alt="Турнир по игре «Мемо. Православные праздники» — обложка события"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/01.jpg" alt="Фотография 1 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/02.jpg" alt="Фотография 2 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/03.jpg" alt="Фотография 3 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/04.jpg" alt="Фотография 4 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/05.jpg" alt="Фотография 5 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/06.jpg" alt="Фотография 6 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/07.jpg" alt="Фотография 7 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/08.jpg" alt="Фотография 8 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/09.jpg" alt="Фотография 9 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/10.jpg" alt="Фотография 10 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/11.jpg" alt="Фотография 11 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/12.jpg" alt="Фотография 12 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/13.jpg" alt="Фотография 13 с турнира на Невском 177"></div>
+                      <div class="gallery__slide"><img src="img/nevsky177/14.jpg" alt="Фотография 14 с турнира на Невском 177"></div>
+                    </div>
+                  </div>
+
+                  <div class="gallery__caption">
+                    <div class="gallery__caption-text">
+                      Фотографии события. Просмотр доступен с помощью свайпа, стрелок или точек навигации.
+                    </div>
+                    <div class="gallery__count">1 / 15</div>
+                  </div>
+
+                  <div class="gallery__controls">
+                    <div class="gallery__dots"></div>
+                    <div class="gallery__arrows">
+                      <button class="gallery__arrow gallery__prev" type="button" aria-label="Предыдущая фотография">‹</button>
+                      <button class="gallery__arrow gallery__next" type="button" aria-label="Следующая фотография">›</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card__body">
+                <div class="news-date">16 апреля · Санкт-Петербург</div>
+                <div class="news-content">
+                  <h3>Очередной турнир с игрой «Мемо. Православные праздники» в духовно-просветительском центре на Невском, 177</h3>
+                  <p>
+                    16 апреля прошел очередной турнир с игрой «Мемо. Православные праздники»
+                    в Духовно-просветительском центре Санкт-Петербургской Епархии на Невском, 177.
+                    Дети с удовольствием подключились к обсуждению православных праздников
+                    уже на этапе знакомства с игрой. Встреча прошла тепло и содержательно,
+                    участники активно включались в процесс, а по итогам события дети остались довольны.
+                  </p>
+                </div>
+
+                <div class="news-meta">
+                  <span class="news-chip">Игровой просветительский формат</span>
+                  <span class="news-chip">Детская аудитория</span>
+                  <span class="news-chip">Фотогалерея события</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- =====================================================
+             БЛОК 2. ТЕКСТОВЫЕ НОВОСТИ БЕЗ ФОТО
+             СЮДА ДОБАВЛЯЮТСЯ НОВОСТИ, У КОТОРЫХ ПОКА НЕТ ИЗОБРАЖЕНИЙ
+
+             Чтобы добавить новую текстовую новость:
+             1) скопируй целиком article.news-note
+             2) вставь ниже
+             3) замени год, заголовок и текст
+        ====================================================== -->
+        <div class="news-notes">
+
+          <!-- ================================================
+               ТЕКСТОВАЯ НОВОСТЬ БЕЗ ФОТО
+          ================================================= -->
+          <article class="news-note">
+            <div class="news-note__year">2026</div>
+            <div class="news-note__content">
               <h3>АНО «Факториал» начала работу как площадка культурно-научных и образовательных инициатив</h3>
               <p>
                 Организация объединяет просветительские, культурные, игровые и цифровые направления,
-                формируя среду для работы с общественно значимыми проектами, знаниями, профессиональным
-                ростом и современными форматами участия.
+                формируя среду для работы с общественно значимыми проектами, знаниями,
+                профессиональным ростом и современными форматами участия.
               </p>
             </div>
           </article>
 
-          <article class="news-item">
-            <div class="news-date">2025</div>
-            <div class="news-content">
+          <!-- ================================================
+               ТЕКСТОВАЯ НОВОСТЬ БЕЗ ФОТО
+          ================================================= -->
+          <article class="news-note">
+            <div class="news-note__year">2025</div>
+            <div class="news-note__content">
               <h3>Совместно с Феодоровским собором проведен дружеский турнир по настольной игре</h3>
               <p>
                 В Санкт-Петербурге состоялась встреча молодежных команд, посвященная игре
@@ -1044,21 +1484,27 @@
             </div>
           </article>
 
-          <article class="news-item">
-            <div class="news-date">2025</div>
-            <div class="news-content">
+          <!-- ================================================
+               ТЕКСТОВАЯ НОВОСТЬ БЕЗ ФОТО
+          ================================================= -->
+          <article class="news-note">
+            <div class="news-note__year">2025</div>
+            <div class="news-note__content">
               <h3>Игровые просветительские форматы представлены на семейных и общественных площадках</h3>
               <p>
-                В ряде форумов и открытых событий были представлены настольные и тематические игровые
-                форматы, посвященные культурной памяти, праздникам, историческим сюжетам и развитию
-                содержательного семейного досуга.
+                В ряде форумов и открытых событий были представлены настольные и тематические
+                игровые форматы, посвященные культурной памяти, праздникам, историческим сюжетам
+                и развитию содержательного семейного досуга.
               </p>
             </div>
           </article>
 
-          <article class="news-item">
-            <div class="news-date">2025</div>
-            <div class="news-content">
+          <!-- ================================================
+               ТЕКСТОВАЯ НОВОСТЬ БЕЗ ФОТО
+          ================================================= -->
+          <article class="news-note">
+            <div class="news-note__year">2025</div>
+            <div class="news-note__content">
               <h3>Продолжаются семинары, выездные встречи и методическая работа</h3>
               <p>
                 Наряду с самими игровыми программами ведется работа по обсуждению и адаптации
@@ -1067,10 +1513,19 @@
               </p>
             </div>
           </article>
+
+          <!-- ================================================
+               ТЕКСТОВАЯ НОВОСТЬ БЕЗ ФОТО
+               НОВЫЕ НОВОСТИ МОЖНО ДОБАВЛЯТЬ НИЖЕ
+          ================================================= -->
+
         </div>
       </div>
     </section>
 
+    <!-- =========================================================
+         БЛОК "КОМАНДА"
+    ========================================================== -->
     <section id="team" class="section">
       <div class="container">
         <div class="section-head">
@@ -1173,8 +1628,9 @@
           <h4>Официальная информация</h4>
           <ul class="footer-list">
             <li>Автономная некоммерческая организация</li>
-            <li>Организация зарегистрирована в Российской Федерации</li>
-            <li>Полные реквизиты и регистрационные сведения предоставляются по запросу</li>
+            <li>ОГРН: 1267800027362</li>
+            <li>ИНН: 7805829442</li>
+            <li>КПП: 780501001</li>
           </ul>
         </div>
       </div>
@@ -1184,6 +1640,155 @@
       </div>
     </div>
   </footer>
+
+  <!-- =========================================================
+       СКРИПТ ГАЛЕРЕИ
+       Работает только для карточек, где есть data-gallery
+       Текстовые новости без фото этот скрипт не затрагивает
+  ========================================================== -->
+  <script>
+    (function () {
+      const galleries = document.querySelectorAll('[data-gallery]');
+
+      galleries.forEach((gallery) => {
+        const track = gallery.querySelector('.gallery__track');
+        const slides = Array.from(gallery.querySelectorAll('.gallery__slide'));
+        const dotsWrap = gallery.querySelector('.gallery__dots');
+        const prevBtn = gallery.querySelector('.gallery__prev');
+        const nextBtn = gallery.querySelector('.gallery__next');
+        const count = gallery.querySelector('.gallery__count');
+        const viewport = gallery.querySelector('.gallery__viewport');
+
+        let index = 0;
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let deltaX = 0;
+
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'gallery__dot';
+          dot.setAttribute('aria-label', `Перейти к фотографии ${i + 1}`);
+          dot.addEventListener('click', () => {
+            index = i;
+            update();
+          });
+          dotsWrap.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsWrap.querySelectorAll('.gallery__dot'));
+
+        function update() {
+          track.style.transition = 'transform 0.35s ease';
+          track.style.transform = `translateX(-${index * 100}%)`;
+
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === index);
+          });
+
+          if (count) {
+            count.textContent = `${index + 1} / ${slides.length}`;
+          }
+
+          if (prevBtn) {
+            prevBtn.disabled = index === 0;
+          }
+
+          if (nextBtn) {
+            nextBtn.disabled = index === slides.length - 1;
+          }
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (index > 0) {
+              index -= 1;
+              update();
+            }
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (index < slides.length - 1) {
+              index += 1;
+              update();
+            }
+          });
+        }
+
+        gallery.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft' && index > 0) {
+            index -= 1;
+            update();
+          }
+
+          if (e.key === 'ArrowRight' && index < slides.length - 1) {
+            index += 1;
+            update();
+          }
+        });
+
+        function onStart(clientX) {
+          isDragging = true;
+          startX = clientX;
+          currentX = clientX;
+          deltaX = 0;
+          track.style.transition = 'none';
+        }
+
+        function onMove(clientX) {
+          if (!isDragging || !viewport) return;
+          currentX = clientX;
+          deltaX = currentX - startX;
+          const offsetPercent = (deltaX / viewport.offsetWidth) * 100;
+          track.style.transform = `translateX(calc(-${index * 100}% + ${offsetPercent}%))`;
+        }
+
+        function onEnd() {
+          if (!isDragging || !viewport) return;
+          isDragging = false;
+
+          const threshold = viewport.offsetWidth * 0.12;
+
+          if (deltaX < -threshold && index < slides.length - 1) {
+            index += 1;
+          } else if (deltaX > threshold && index > 0) {
+            index -= 1;
+          }
+
+          update();
+        }
+
+        if (viewport) {
+          viewport.addEventListener('touchstart', (e) => {
+            onStart(e.touches[0].clientX);
+          }, { passive: true });
+
+          viewport.addEventListener('touchmove', (e) => {
+            onMove(e.touches[0].clientX);
+          }, { passive: true });
+
+          viewport.addEventListener('touchend', onEnd);
+
+          viewport.addEventListener('mousedown', (e) => {
+            onStart(e.clientX);
+          });
+
+          viewport.addEventListener('mouseleave', onEnd);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+          onMove(e.clientX);
+        });
+
+        window.addEventListener('mouseup', onEnd);
+
+        update();
+      });
+    })();
+  </script>
 
 </body>
 </html>
