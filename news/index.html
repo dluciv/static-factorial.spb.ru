@@ -1,0 +1,37 @@
+---
+layout: default
+title: Все новости
+---
+
+{% assign all_news = site.posts %}
+
+<section class="section news" style="border-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__left">
+        <div class="section-kicker">События</div>
+        <h2 class="section-title">Все новости</h2>
+        <p class="section-text">
+          Полная хроника событий и форматов организации.
+        </p>
+      </div>
+      <a href="/" class="section-link">На главную</a>
+    </div>
+
+    <div class="news-list">
+      {% for post in all_news %}
+        {% if post.type == "card" %}
+          {% include news-card.html post=post %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="news-notes">
+      {% for post in all_news %}
+        {% if post.type == "note" %}
+          {% include news-note.html post=post %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

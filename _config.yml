@@ -1,0 +1,15 @@
+title: АНО «ФАКТОРИАЛ»
+description: Культурно-научные и образовательные проекты
+baseurl: ""
+url: "https://factorial.spb.ru"
+markdown: kramdown
+
+news_count: 3
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: null
+      permalink: /news/:slug/

@@ -1,0 +1,42 @@
+<article class="news-card">
+  <div class="news-card__inner">
+    <div class="news-card__media">
+      <div class="gallery" data-gallery tabindex="0">
+        <div class="gallery__viewport">
+          <div class="gallery__track">
+            {% for image in include.post.gallery %}
+            <div class="gallery__slide"><img src="{{ image.src }}" alt="{{ image.alt }}"></div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="gallery__caption">
+          <div class="gallery__caption-text">{{ include.post.gallery_caption }}</div>
+          <div class="gallery__count">1 / {{ include.post.gallery | size }}</div>
+        </div>
+
+        <div class="gallery__controls">
+          <div class="gallery__dots"></div>
+          <div class="gallery__arrows">
+            <button class="gallery__arrow gallery__prev" type="button" aria-label="Предыдущая фотография">‹</button>
+            <button class="gallery__arrow gallery__next" type="button" aria-label="Следующая фотография">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card__body">
+      <div class="news-date">{{ include.post.display_date }}{% if include.post.location %} · {{ include.post.location }}{% endif %}</div>
+      <div class="news-content">
+        <h3>{{ include.post.title }}</h3>
+        {{ include.post.content }}
+      </div>
+
+      <div class="news-meta">
+        {% for tag in include.post.tags %}
+        <span class="news-chip">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article>
