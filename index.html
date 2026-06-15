@@ -8,176 +8,20 @@ layout: default
 <!-- =========================================================
      ПЕРВЫЙ ЭКРАН
 ========================================================== -->
-<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <div class="eyebrow">Автономная некоммерческая организация</div>
-      <h1>Создаем среды, в которых знание становится участием</h1>
-      <p class="hero__lead">
-        АНО «Факториал» — организация, работающая в сферах культуры, науки, просвещения и
-        информационных технологий. Мы разрабатываем и сопровождаем проекты, в которых
-        соединяются образовательные программы, игровые форматы, публичные события и
-        цифровые инструменты.
-      </p>
 
-      <div class="hero__actions">
-        <a href="/#projects" class="button button--dark">Смотреть проекты</a>
-        <a href="/#contacts" class="button button--light">Связаться</a>
-      </div>
-    </div>
-
-    <aside class="hero__panel" aria-label="Ключевые направления">
-      <div class="hero__panel-label">Ключевые направления</div>
-      <ul class="hero__panel-list">
-        <li class="hero__panel-item">
-          <p class="hero__panel-title">Просветительские и культурные программы</p>
-          <p class="hero__panel-text">
-            Организуем события, встречи и общественно значимые форматы, посвященные культуре, знанию,
-            профессиональному росту и содержательному досугу.
-          </p>
-        </li>
-        <li class="hero__panel-item">
-          <p class="hero__panel-title">Игровые и интерактивные практики</p>
-          <p class="hero__panel-text">
-            Используем настольные, турнирные и иные игровые форматы как тактичный инструмент
-            вовлечения в образование, историю, традицию и коллективное обсуждение.
-          </p>
-        </li>
-        <li class="hero__panel-item">
-          <p class="hero__panel-title">IT и информационные среды</p>
-          <p class="hero__panel-text">
-            Развиваем цифровые решения, информационные ресурсы и инструменты сопровождения
-            проектов в области культуры, просвещения и общественных инициатив.
-          </p>
-        </li>
-      </ul>
-    </aside>
-  </div>
-</section>
+{% include key-topics.html %}
 
 <!-- =========================================================
      БЛОК "ПОДХОД"
 ========================================================== -->
-<section id="about" class="section expertise">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-head__left">
-        <div class="section-kicker">Подход</div>
-        <h2 class="section-title">Работаем на пересечении просвещения, культурной практики и современной проектной формы</h2>
-        <p class="section-text">
-          Для нас важны не только отдельные мероприятия, но и качество среды: каким образом человек
-          включается в процесс, как устроено содержание, насколько точно подобраны форма, язык и
-          инструменты взаимодействия.
-        </p>
-      </div>
-    </div>
 
-    <div class="expertise-grid">
-      <article class="expertise-card">
-        <div>
-          <div class="expertise-card__index">01</div>
-          <h3>Просветительские программы</h3>
-          <p>
-            Организуем лекции, семинары, круглые столы, встречи, выставочные и публичные форматы,
-            связанные с культурой, наукой, образованием и общественно значимыми инициативами.
-          </p>
-        </div>
-      </article>
-
-      <article class="expertise-card">
-        <div>
-          <div class="expertise-card__index">02</div>
-          <h3>Игровые форматы</h3>
-          <p>
-            Работаем с настольными играми, турнирами и интерактивными сценариями, в которых
-            сложные темы раскрываются через участие, диалог, наблюдение и совместное действие.
-          </p>
-        </div>
-      </article>
-
-      <article class="expertise-card">
-        <div>
-          <div class="expertise-card__index">03</div>
-          <h3>Цифровые и методические решения</h3>
-          <p>
-            Разрабатываем информационные ресурсы, программные и организационно-методические
-            инструменты для сопровождения просветительских, культурных и исследовательских проектов.
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+{% include approach.html %}
 
 <!-- =========================================================
      БЛОК "ПРОЕКТЫ"
 ========================================================== -->
-<section id="projects" class="section projects">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-head__left">
-        <div class="section-kicker">Проекты и практики</div>
-        <h2 class="section-title">Несколько форматов, через которые уже видна логика нашей работы</h2>
-        <p class="section-text">
-          На сайте представлены не все направления деятельности организации, а лишь несколько
-          показательных примеров: публичные события, просветительские игровые форматы,
-          методическая и цифровая работа.
-        </p>
-      </div>
-      <a href="/#contacts" class="section-link">Связаться по поводу сотрудничества</a>
-    </div>
 
-    <div class="projects-layout">
-      <article class="project-feature">
-        <div class="project-media">
-          <img src="img/5.jpg" alt="">
-        </div>
-        <div>
-          <div class="project-meta">Совместный проект · Санкт-Петербург</div>
-          <h3 class="project-title">Турнир по игре «Ось времени. Богослужебный год»</h3>
-          <p class="project-text">
-            Совместно с Феодоровским собором был проведен дружеский турнир, посвященный знакомству
-            подростков и молодежи с церковным календарем, праздниками и богослужебной традицией
-            через содержательную игровую форму. Для нас это важный пример того, как просвещение
-            может быть одновременно точным, уважительным и вовлекающим.
-          </p>
-        </div>
-      </article>
-
-      <div class="project-stack">
-        <article>
-          <div class="project-meta">Публичные площадки</div>
-          <h3 class="project-title" style="font-size: 24px;">Игровые форматы на семейных и городских событиях</h3>
-          <p class="project-text">
-            Организация участвует в форумах, встречах и общественных площадках, где игровые
-            механики помогают говорить с детьми, подростками и семьями о культуре, истории,
-            традиции, памяти и ценностях совместного участия.
-          </p>
-        </article>
-
-        <article>
-          <div class="project-meta">Методическая работа</div>
-          <h3 class="project-title" style="font-size: 24px;">Семинары, выездные встречи и сопровождение</h3>
-          <p class="project-text">
-            Отдельное направление работы — семинары и консультации для педагогов, организаторов и
-            партнерских площадок, а также сопровождение программ, в которых игровые и
-            просветительские форматы используются в долгую и осмысленно.
-          </p>
-        </article>
-
-        <article>
-          <div class="project-meta">Цифровая среда</div>
-          <h3 class="project-title" style="font-size: 24px;">Информационные ресурсы и IT-направление</h3>
-          <p class="project-text">
-            В зоне развития — цифровые платформы, информационные среды и технологическое
-            сопровождение проектов, связанных с культурой, образованием, общественными
-            инициативами и современным распространением знания.
-          </p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+{% include projects.html %}
 
 <!-- =========================================================
      БЛОК "СОБЫТИЯ И НОВОСТИ"
@@ -217,71 +61,5 @@ layout: default
 <!-- =========================================================
      БЛОК "КОМАНДА"
 ========================================================== -->
-<section id="team" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-head__left">
-        <div class="section-kicker">Команда</div>
-        <h2 class="section-title">Руководство и учредители</h2>
-        <p class="section-text">
-          Команда организации объединяет управленческую, методическую, научную и технологическую
-          компетенции, необходимые для развития культурно-научных и образовательных проектов.
-        </p>
-      </div>
-    </div>
 
-    <div class="team-grid">
-      <article class="person-card">
-        <div class="person-card__photo"><img src="img/3.jpg" alt=""></div>
-        <div class="person-card__body">
-          <div class="person-card__role">Генеральный директор</div>
-          <h3 class="person-card__name">Русляков Геннадий Павлович</h3>
-          <p class="person-card__text">
-            Осуществляет текущее руководство организацией, координирует проектную работу,
-            внешние связи и развитие партнерских направлений.
-          </p>
-          <a class="person-card__mail" href="mailto:basspace@mail.ru">basspace@mail.ru</a>
-        </div>
-      </article>
-
-      <article class="person-card">
-        <div class="person-card__photo"><img src="img/4.jpg" alt=""></div>
-        <div class="person-card__body">
-          <div class="person-card__role">Учредитель · IT-направление</div>
-          <h3 class="person-card__name">Луцив Дмитрий Вадимович</h3>
-          <p class="person-card__text">
-            Ответственный секретарь, кандидат физико-математических наук, доцент.
-            Курирует технологическое развитие, цифровые решения и IT-сопровождение проектов.
-          </p>
-          <a class="person-card__mail" href="mailto:dluciv@dluciv.name">dluciv@dluciv.name</a>
-        </div>
-      </article>
-
-      <article class="person-card">
-        <div class="person-card__photo"><img src="img/1.jpg" alt=""></div>
-        <div class="person-card__body">
-          <div class="person-card__role">Учредитель · Методическое направление</div>
-          <h3 class="person-card__name">Смольников Владимир Юрьевич</h3>
-          <p class="person-card__text">
-            Кандидат педагогических наук. Отвечает за методическую рамку программ,
-            образовательную логику проектов и содержательное сопровождение инициатив.
-          </p>
-          <a class="person-card__mail" href="mailto:vysm@mail.ru">vysm@mail.ru</a>
-        </div>
-      </article>
-
-      <article class="person-card">
-        <div class="person-card__photo"><img src="img/2.jpg" alt=""></div>
-        <div class="person-card__body">
-          <div class="person-card__role">Учредитель · Взаимодействие и партнерства</div>
-          <h3 class="person-card__name">Якубенко Людмила Михайловна</h3>
-          <p class="person-card__text">
-            Физик. Сопровождает взаимодействие с государственными структурами, партнерами
-            и спонсорами, а также внешние организационные коммуникации.
-          </p>
-          <a class="person-card__mail" href="mailto:lm25.10@yandex.ru">lm25.10@yandex.ru</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+{% include team.html %}
