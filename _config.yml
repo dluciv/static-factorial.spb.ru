@@ -4,7 +4,7 @@ baseurl: ""
 url: "https://factorial.spb.ru"
 markdown: kramdown
 
-news_count: 3
+news_count: 5
 
 defaults:
   - scope:
