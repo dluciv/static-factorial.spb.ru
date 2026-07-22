@@ -661,6 +661,91 @@ section.section {
 }
 
 /* =========================================================
+   8b. ССЫЛКА «ЧИТАТЬ ДАЛЕЕ»
+========================================================== */
+.news-read-more {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.news-read-more:hover {
+  color: var(--ink);
+}
+
+.news-card__cover {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.news-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.news-card__cover:hover img {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   8c. СТРАНИЦА ОТДЕЛЬНОЙ НОВОСТИ
+========================================================== */
+.post-nav {
+  margin-bottom: 32px;
+}
+
+.post-nav__link {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.post-nav__link:hover {
+  color: var(--ink);
+}
+
+.post {
+  max-width: 800px;
+}
+
+.post__title {
+  margin: 0 0 28px;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.post__meta {
+  margin-bottom: 24px;
+}
+
+.post__gallery {
+  margin-bottom: 36px;
+}
+
+.post__content {
+  margin-top: 8px;
+}
+
+.post__content p {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
    9. ГАЛЕРЕЯ
 ========================================================= */
 .gallery {
@@ -1078,5 +1163,13 @@ section.section {
 
   .gallery__arrows {
     align-self: flex-end;
+  }
+
+  .post__title {
+    font-size: 26px;
+  }
+
+  .post__content p {
+    font-size: 16px;
   }
 }

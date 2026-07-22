@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — АНО «ФАКТОРИАЛ» — культурно-научные и образовательные проекты</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta name="description" content="{{ page.title | xml_escape }}" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="alternate" type="application/atom+xml" title="АНО «ФАКТОРИАЛ» — События" href="/feed.xml" />
+</head>
+<body>
+
+{% include header.html %}
+
+<main id="top">
+  <section class="section news news--flat">
+    <div class="container">
+      <div class="post-nav">
+        <a href="/news/" class="post-nav__link">← Ко всем новостям</a>
+      </div>
+
+      <article class="post">
+        <div class="post__meta">
+          <div class="news-date">{{ page.display_date }}{% if page.location %} · {{ page.location }}{% endif %}</div>
+          {% if page.tags.size > 0 %}
+          <div class="news-meta">
+            {% for tag in page.tags %}
+            <span class="news-chip">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <h1 class="post__title">{{ page.title }}</h1>
+
+        {% if page.type == "card" and page.gallery.size > 0 %}
+        <div class="post__gallery">
+          <div class="gallery" data-gallery tabindex="0">
+            <div class="gallery__viewport">
+              <div class="gallery__track">
+                {% for image in page.gallery %}
+                <div class="gallery__slide"><img src="{{ image.src }}" alt="{{ image.alt }}"></div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="gallery__caption">
+              <div class="gallery__caption-text">{{ page.gallery_caption }}</div>
+              <div class="gallery__count">1 / {{ page.gallery | size }}</div>
+            </div>
+
+            <div class="gallery__controls">
+              <div class="gallery__dots"></div>
+              <div class="gallery__arrows">
+                <button class="gallery__arrow gallery__prev" type="button" aria-label="Предыдущая фотография">‹</button>
+                <button class="gallery__arrow gallery__next" type="button" aria-label="Следующая фотография">›</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="post__content news-content">
+          {{ content | remove: site.excerpt_separator }}
+        </div>
+      </article>
+
+      <div class="post-nav">
+        <a href="/news/" class="post-nav__link">← Ко всем новостям</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script src="/assets/js/gallery.js"></script>
+</body>
+</html>

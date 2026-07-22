@@ -3,6 +3,7 @@ description: Культурно-научные и образовательные
 baseurl: ""
 url: "https://factorial.spb.ru"
 markdown: kramdown
+excerpt_separator: "<!--more-->"
 
 news_count: 5
 
@@ -11,5 +12,5 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: null
+      layout: post
       permalink: /news/:slug/
