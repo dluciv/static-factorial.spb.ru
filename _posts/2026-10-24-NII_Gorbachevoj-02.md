@@ -5,15 +5,15 @@ location: Санкт-Петербург
 tags:
   - Реабилитация
 gallery:
-  - src: /img/2026-10-24-NII_Gorbachevoj/1.jpg
+  - src: /img/2026-10-24-NII_Gorbachevoj-02/1.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-10-24-NII_Gorbachevoj/0.jpg
+  - src: /img/2026-10-24-NII_Gorbachevoj-02/0.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-10-24-NII_Gorbachevoj/2.jpg
+  - src: /img/2026-10-24-NII_Gorbachevoj-02/2.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-10-24-NII_Gorbachevoj/3.jpg
+  - src: /img/2026-10-24-NII_Gorbachevoj-02/3.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-10-24-NII_Gorbachevoj/4.jpg
+  - src: /img/2026-10-24-NII_Gorbachevoj-02/4.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
 gallery_caption: Фотографии события. Просмотр доступен с помощью свайпа, стрелок или точек навигации.
 title: 'Игрореабилитация в НИИ им. Р.М. Горбачёвой: как настольные игры дарят радость и надежду'

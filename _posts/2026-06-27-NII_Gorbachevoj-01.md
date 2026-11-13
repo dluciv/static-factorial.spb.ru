@@ -5,21 +5,21 @@ location: Санкт-Петербург
 tags:
   - Реабилитация
 gallery:
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00005.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00005.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00006.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00006.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00013.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00013.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00026.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00026.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00028.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00028.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00038.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00038.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00044.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00044.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
-  - src: /img/2026-06-27-NII_Gorbachevoj/A7C00062.jpg
+  - src: /img/2026-06-27-NII_Gorbachevoj-01/A7C00062.jpg
     alt: 'НИИ им. Р.М. Горбачевой'
 gallery_caption: Фотографии события. Просмотр доступен с помощью свайпа, стрелок или точек навигации.
 title: 'Игрореабилитация в действии: как мы провели день в НИИ им. Р.М. Горбачевой и почему настольные игры — это тоже лекарство'
