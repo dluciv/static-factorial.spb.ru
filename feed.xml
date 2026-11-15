@@ -20,6 +20,11 @@ permalink: /feed.xml
     <link href="{{ site.url }}{{ post.url }}" rel="alternate" type="text/html" />
     <id>{{ site.url }}{{ post.url }}</id>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
+    {% if post.gallery.size > 0 %}
+    {% assign cover = post.gallery.first %}
+    {% assign cover_ext = cover.src | split: '.' | last | downcase %}
+    <link rel="enclosure" href="{{ site.url }}{{ cover.src }}" type="image/{% if cover_ext == 'png' %}png{% elsif cover_ext == 'webp' %}webp{% elsif cover_ext == 'avif' %}avif{% elsif cover_ext == 'gif' %}gif{% else %}jpeg{% endif %}" />
+    {% endif %}
     <summary type="html">{{ post.excerpt | xml_escape }}</summary>
     <content type="html">{{ post.content | remove: site.excerpt_separator | xml_escape }}</content>
     {% for tag in post.tags %}

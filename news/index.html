@@ -10,7 +10,7 @@ title: Все новости
     <div class="section-head">
       <div class="section-head__left">
         <div class="section-kicker">События</div>
-        <h2 class="section-title">Все новости</h2>
+        <h1 class="section-title">Все новости</h1>
         <p class="section-text">
           Полная хроника событий и форматов организации.
         </p>
@@ -21,7 +21,7 @@ title: Все новости
     <div class="news-list">
       {% for post in all_news %}
         {% if post.type == "card" %}
-          {% include news-card.html post=post %}
+          {% include news-card.html post=post heading_level=2 %}
         {% endif %}
       {% endfor %}
     </div>
@@ -29,7 +29,7 @@ title: Все новости
     <div class="news-notes">
       {% for post in all_news %}
         {% if post.type == "note" %}
-          {% include news-note.html post=post %}
+          {% include news-note.html post=post heading_level=2 %}
         {% endif %}
       {% endfor %}
     </div>

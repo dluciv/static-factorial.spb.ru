@@ -1,7 +1,7 @@
 <article class="news-note">
   <div class="news-note__year">{{ include.post.display_date }}</div>
   <div class="news-note__content">
-    <h3><a href="{{ include.post.url }}">{{ include.post.title }}</a></h3>
+    <h{{ include.heading_level | default: 3 }}><a href="{{ include.post.url }}">{{ include.post.title }}</a></h{{ include.heading_level | default: 3 }}>
     {{ include.post.excerpt }}
     {% if include.post.content contains site.excerpt_separator %}
     <a href="{{ include.post.url }}" class="news-read-more">Читать далее →</a>

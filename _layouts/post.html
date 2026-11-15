@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} — АНО «ФАКТОРИАЛ» — культурно-научные и образовательные проекты</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
-  <meta name="description" content="{{ page.title | xml_escape }}" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="alternate" type="application/atom+xml" title="АНО «ФАКТОРИАЛ» — События" href="/feed.xml" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <meta name="description" content="{{ page.title | xml_escape }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/atom+xml" title="АНО «ФАКТОРИАЛ» — События" href="/feed.xml">
 </head>
 <body>
 
 {% include header.html %}
 
 <main id="top">
-  <section class="section news news--flat">
+  <div class="section news news--flat">
     <div class="container">
       <div class="post-nav">
         <a href="/news/" class="post-nav__link">← Ко всем новостям</a>
@@ -71,7 +71,7 @@
         <a href="/news/" class="post-nav__link">← Ко всем новостям</a>
       </div>
     </div>
-  </section>
+  </div>
 </main>
 
 {% include footer.html %}

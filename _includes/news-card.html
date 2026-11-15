@@ -11,7 +11,7 @@
     <div class="news-card__body">
       <div class="news-date">{{ include.post.display_date }}{% if include.post.location %} · {{ include.post.location }}{% endif %}</div>
       <div class="news-content">
-        <h3><a href="{{ include.post.url }}">{{ include.post.title }}</a></h3>
+        <h{{ include.heading_level | default: 3 }}><a href="{{ include.post.url }}">{{ include.post.title }}</a></h{{ include.heading_level | default: 3 }}>
         {{ include.post.excerpt }}
       </div>
 
