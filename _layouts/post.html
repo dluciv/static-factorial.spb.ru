@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="auto">
 <head>
   <meta charset="UTF-8">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark' && t !== 'auto') t = 'auto';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} — АНО «ФАКТОРИАЛ» — культурно-научные и образовательные проекты</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -10,6 +20,8 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="alternate" type="application/atom+xml" title="АНО «ФАКТОРИАЛ» — События (Atom)" href="/atom.xml">
   <link rel="alternate" type="application/rss+xml" title="АНО «ФАКТОРИАЛ» — События (RSS)" href="/rss.xml">
+<script data-goatcounter="https://factorial-spb-ru.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -77,6 +89,7 @@
 
 {% include footer.html %}
 
+<script src="/assets/js/theme.js"></script>
 <script src="/assets/js/gallery.js"></script>
 </body>
 </html>
