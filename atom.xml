@@ -1,12 +1,12 @@
 ---
 layout: null
-permalink: /feed.xml
+permalink: /atom.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ru">
   <title>АНО «ФАКТОРИАЛ» — События</title>
-  <subtitle>Культурно-научные и образовательные проекты</subtitle>
-  <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ site.url }}/atom.xml" rel="self" type="application/atom+xml" />
   <link href="{{ site.url }}/" rel="alternate" type="text/html" />
   <id>{{ site.url }}/</id>
   <updated>{% assign first_post = site.posts | first %}{% if first_post %}{{ first_post.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</updated>
