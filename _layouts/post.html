@@ -41,7 +41,7 @@
           {% if page.tags.size > 0 %}
           <div class="news-meta">
             {% for tag in page.tags %}
-            <span class="news-chip">{{ tag }}</span>
+            {% include news-tag.html tag=tag %}
             {% endfor %}
           </div>
           {% endif %}

@@ -5,7 +5,7 @@ title: Все новости
 
 {% assign all_news = site.posts %}
 
-<section class="section news news--flat">
+<section class="section news news--flat" data-news-filter>
   <div class="container">
     <div class="section-head">
       <div class="section-head__left">
@@ -17,6 +17,8 @@ title: Все новости
       </div>
       <a href="/" class="section-link">На главную</a>
     </div>
+
+    {% include news-filter.html %}
 
     <div class="news-list">
       {% for post in all_news %}
@@ -35,3 +37,5 @@ title: Все новости
     </div>
   </div>
 </section>
+
+<script src="/assets/js/news-filter.js"></script>

@@ -1,4 +1,4 @@
-<article class="news-card">
+<article class="news-card" data-tags="{{ include.post.tags | join: '|' | escape }}">
   <div class="news-card__inner">
     {% if include.post.gallery.size > 0 %}
     <div class="news-card__media">
@@ -19,11 +19,13 @@
       <a href="{{ include.post.url }}" class="news-read-more">Читать далее →</a>
       {% endif %}
 
+      {% if include.post.tags.size > 0 %}
       <div class="news-meta">
         {% for tag in include.post.tags %}
-        <span class="news-chip">{{ tag }}</span>
+        {% include news-tag.html tag=tag %}
         {% endfor %}
       </div>
+      {% endif %}
     </div>
   </div>
 </article>

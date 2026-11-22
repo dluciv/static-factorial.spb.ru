@@ -1,0 +1,14 @@
+<div class="news-filter">
+  <p class="news-filter__label">Фильтр по теме</p>
+  <div class="news-filter__list">
+    <a href="/news/" class="news-filter__chip" data-filter="">Все темы</a>
+    {% for tag in site.tags %}
+    <a href="/news/?tag={{ tag[0] | url_encode }}" class="news-filter__chip" data-filter="{{ tag[0] | escape }}">{{ tag[0] | escape }}</a>
+    {% endfor %}
+  </div>
+  <p class="news-filter__status" data-filter-status role="status" hidden>
+    <span data-filter-message>Показаны новости по теме:</span>
+    <strong data-filter-name></strong>
+    <a href="/news/">Показать все новости</a>
+  </p>
+</div>
